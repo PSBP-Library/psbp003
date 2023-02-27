@@ -68,12 +68,12 @@ Functions are defined using expressions.
 For side effect free expressions it does not matter how they are evaluated as far as the yieded result value is
 concerned.
 
-One aspect of top-down expression evaluation is as follows: continuing with evaluating an outer expression by binding
-the result value yielded by evaluating an inner expression to an expression evaluation continuation yields a expression
-that, when evaluating it, yields the result value of the outer expression. 
-
 A function application, obtained by replacing the parameter of the function by an argument, is an expression that, when
 evaluated to yield a result value, evaluates the expression defining the function. 
+
+One aspect of top-down expression evaluation is the following: continuing with evaluating an outer expression by binding
+the result value yielded by evaluating an inner expression to an expression evaluation continuation yields a expression
+that, when evaluating it, yields the result value of the outer expression.
 
 ### Programs and Computations
 
@@ -93,7 +93,11 @@ All implementations of the `trait Program` specification implicitly implement th
 Computations are values of type `C[Y]` that are defined in terms of computation concepts that are specified in
 `trait Computation`.
 
-In this course all implicit program implementations are values of type `Z => C[Y]`.
+All implementations of the `trait Computation` specification implicitly implement those computations. 
+
+In this course all implicit program implementations are values of type `Z => C[Y]`. 
+
+Computation implementations are, potentially, not side effect free.
 
 Below the basic computation concepts are specified.
 
@@ -113,6 +117,12 @@ In other words, expressions can be lifted to computations and, much in the same 
 evaluation, continuing with executing an outer computation by binding the result value yielded by executing an inner
 computation to a computation valued continuation function yields a computation that, when executing it, yields the
 result value of the outer computation.
+
+Expressions are language level defined artifacts. 
+
+Computations are library level defined artifacts. 
+
+Computation execution is partly defined by the implementations of the specified computation concepts.
 
 ### Partially implementating `Function`
 
