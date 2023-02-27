@@ -11,7 +11,7 @@ private[psbp] trait Function[C[+_]: Computation, &&[+_, +_]]
 
   import summonedComputation.{expressionLift}
 
-  // external overridden defined
+  // external defined
 
   override def functionLift[Z, Y]: (Z => Y) => (Z >--> Y) = `z=>y` =>
     z => expressionLift(`z=>y`(z))
