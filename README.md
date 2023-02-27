@@ -200,7 +200,7 @@ private[psbp] trait SequentialComposition[C[+_]: Computation]
 
 ## Conclusion
 
-We defined some `trait Program` members in terms of `trait Computation` members.
+We have defined some `trait Program` members in terms of `trait Computation` members.
 
 
 
