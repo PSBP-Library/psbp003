@@ -6,7 +6,7 @@ All comments are welcome at luc.duponcheel[at]gmail.com.
 
 ## Introduction
 
-Below the yet to be defined declared `trait` members so far are briefly repeated.
+Below the, yet to be defined, declared `trait` members so far are briefly repeated.
 
 ```scala
 private[psbp] trait Function[>-->[-_, +_], &&[+_, +_]]:
@@ -65,7 +65,7 @@ Functions are defined using expressions.
 - Functions are denotational artifacts: at development time they (are supposed to) have a meaning.
 - Expressions are operational artifacts: at runtime they (somehow) are evaluated to yield a result value.
 
-For side effect free expressions it does not matter how they are evaluated as far as the yieded result value is
+For side effect free expressions it does not matter how they are evaluated as far as the yielded result value is
 concerned.
 
 A function application, obtained by replacing the parameter of the function by an argument, is an expression that, when
