@@ -73,7 +73,7 @@ For side effect free expressions it does not matter how they are evaluated as fa
 concerned.
 
 A function application, obtained by replacing the parameter of the function by an argument, is an expression that, when
-evaluated to yield a result value, evaluates the expression defining the function. 
+evaluated to yield a result value, evaluates the correpondingly updated expression defining the function. 
 
 One aspect of top-down expression evaluation is the following: continuing with evaluating an outer expression by binding
 the result value yielded by evaluating an inner expression to an expression evaluation continuation yields a expression
@@ -101,8 +101,6 @@ All implementations of the `trait Computation` specification implicitly implemen
 
 In this course all implicit program implementations are values of type `Z => C[Y]`. 
 
-Computation implementations are, potentially, not side effect free.
-
 Below the basic computation concepts are specified.
 
 ```scala
@@ -126,7 +124,9 @@ Expressions are language level defined artifacts.
 
 Computations are library level defined artifacts. 
 
-Computation execution is partly defined by the implementations of the specified computation concepts.
+Computation execution is defined by the implementations of the specified computation concepts.
+
+Computation execution potentially has side effects.
 
 ### Partially implementing `Function` in terms of `Computation`
 
@@ -212,11 +212,12 @@ private[psbp] trait SequentialComposition[C[+_]: Computation]
     z => `z=>c[y]`(z) >= { y => `y=>c[x]`(y) }
 ```
 
+It is, in our opinion, sometimes more natural to use `Z >--> Y`, as in `Function`, and sometimes more natural to use
+`Z => C[Y]`, as in `SequentialComposition`.
+
 ## Conclusion
 
 We have defined some `trait Program` members in terms of `trait Computation` members.
-
-
 
 
 
