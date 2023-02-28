@@ -128,7 +128,7 @@ Computations are library level defined artifacts.
 
 Computation execution is partly defined by the implementations of the specified computation concepts.
 
-### Partially implementing `Function`
+### Partially implementing `Function` in terms of `Computation`
 
 ```scala
 package psbp.implementation.function
@@ -193,7 +193,7 @@ private[psbp] trait Computation[C[+_]]:
     private[psbp] def >=(`z=>c[y]`: => Z => C[Y]): C[Y] = bind(`c[z]`)(`z=>c[y]`)
 ```
 
-### Implementing `SequentialComposition`
+### Implementing `SequentialComposition` in terms of `Computation`
 
 ```scala
 package psbp.implementation.algorithm
