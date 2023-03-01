@@ -33,7 +33,7 @@ private[psbp] trait IfThenElse[
   // internal declared
 
   extension [Z, Y](`z>-t->y`: => Z >--> Y)
-    private[psbp] def Or(`z>-f->y`: => Z >--> Y): (Z && Boolean) >--> Y
+    private[psbp] def OrElse(`z>-f->y`: => Z >--> Y): (Z && Boolean) >--> Y
 ```
 
 and
